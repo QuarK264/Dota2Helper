@@ -28,7 +28,7 @@ namespace Dota2Helper.Migrations
                         CommentBKB = c.String(),
                         CommentLS = c.String(),
                         ImageLink = c.String(),
-                        HeroId = c.Int(nullable: false),
+                        HeroId = c.Int(nullable: false)
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Heroes", t => t.HeroId, cascadeDelete: true)
