@@ -1,31 +1,178 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    //ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<h2>Dota 2 Helper</h2>
+
+<h3>Блокировка способностей предметами Black King Bar и Linken's Sphere</h3>
+
+<p>
+    Узнайте, какие способности героев блокируются (или не блокируются) неуязвимостью к заклинаниям, которую дают предметы Black King Bar и Linken's Sphere.
+</p>
+<p>
+    Для начала выберите героев, для которых вы хотите узнать, какие их способности блокируются Black King Bar и Linken's Sphere. 
+    В поле "СОЮЗНИКИ" также можно посмотреть, какие способности проходят сквозь невосприимчивость к заклинаниям.
+</p>
+<p>
+    Результат можно посмотреть по одному из предметов, т.е. какие способности блокируются/не блокируются одним из предметов 
+    (кнопка "Посмотреть" под одним из столбцов - "Блокируется/Проходит через Black King Bar" или "Блокируется/Проходит через Linken's Sphere"), 
+    можно посмотреть результат для всех выбранных вражеских или союзных героев по обоим предметам (кнопка "Посмотреть всех противников/союзников" соответственно) 
+    или посмотреть результат по обоим предметам и для противников, и для союзников (кнопка "Посмотреть всё" внизу страницы)
+</p>
+
+<br />
+@{
+    List<SelectListItem> listHero = new List<SelectListItem>()
+    {
+        new SelectListItem(){ Value="Abaddon", Text="Abaddon"},
+        new SelectListItem(){ Value="Anti-mage", Text="Anti-mage"},
+        new SelectListItem(){ Value="Axe", Text="Axe"},
+        new SelectListItem(){ Value="Beastmaster", Text="Beastmaster"},
+        new SelectListItem(){ Value="Bloodseeker", Text="Bloodseeker"},
+        new SelectListItem(){ Value="Dragon Knight", Text="Dragon Knight"},
+        new SelectListItem(){ Value="Earthshaker", Text="Earthshaker"},
+        new SelectListItem(){ Value="Necrophos", Text="Necrophos"},
+        new SelectListItem(){ Value="Pudge", Text="Pudge"},
+        new SelectListItem(){ Value="Razor", Text="Razor"},
+        new SelectListItem(){ Value="Warlock", Text="Warlock"},
+    };
+}
+<table cellpadding="10" border="1">
+    <thead>ПРОТИВНИКИ</thead>
+    <tr>
+        <td colspan="3" align="right">
+            <input type="checkbox" value="Показывать картинки" />Показывать картинки
+        </td>
+    </tr>
+    <tr>
+        <th>Выберите героев:</th>
+        <th>Блокируется Black King Bar <img style='width:25px; height:20px;' src=http://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Black_King_Bar_icon.png alt="BKB pic"></th>
+        <th>Блокируется Linken's Sphere <img style='width:25px; height:20px;' src=http://hydra-media.cursecdn.com/dota2.gamepedia.com/2/23/Linken%27s_Sphere_icon.png alt="LS pic"></th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DropDownList("heroEnemy1", listHero, "Герой не выбран")
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DropDownList("heroEnemy2", listHero, "Герой не выбран")
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DropDownList("heroEnemy3", listHero, "Герой не выбран")
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DropDownList("heroEnemy4", listHero, "Герой не выбран")
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DropDownList("heroEnemy5", listHero, "Герой не выбран")
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td align="center">
+            <input type="submit" value="Посмотреть" />
+        </td>
+        <td align="center">
+            <input type="submit" value="Посмотреть" />
+        </td>
+    </tr>
+</table>
+
+<div>
+    <input type="submit" value="Посмотреть всех противников" />
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+@{
+    List<SelectListItem> allyResTypes = new List<SelectListItem>(){
+        new SelectListItem(){ Value="not_block", Text="Проходит", Selected=true},
+        new SelectListItem(){ Value="block", Text="Блокируется"},
+    };
+}
+<br />
+<table cellpadding="10" border="1">
+    <thead>СОЮЗНИКИ</thead>
+    <tr>
+        <td>@Html.DropDownList("allyResTypes", allyResTypes)</td>
+        <td colspan="2" align="right">
+            <input type="checkbox" value="Показывать картинки" />Показывать картинки
+        </td>
+    </tr>
+    <tr>
+        <th>Выберите героев:</th>
+        @*На месте слов "Блокируется" скорее всего будет частичное представление (для того, чтобы надпись менялась в зависимости от отображаемого результата,
+т.е. если в списке "allyResTypes" выбрано "Проходит", в шапке таблицы будет написано "Проходит через...", если выбрано "Блокируется", будет написано "Блокируется...");
+            пока нельзя добавить, потому что нет модели*@
+        <th>Блокируется Black King Bar <img style='width:25px; height:20px;' src=http://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Black_King_Bar_icon.png alt="BKB pic"></th>
+        <th>Блокируется Linken's Sphere <img style='width:25px; height:20px;' src=http://hydra-media.cursecdn.com/dota2.gamepedia.com/2/23/Linken%27s_Sphere_icon.png alt="LS pic"></th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DropDownList("heroAlly1", listHero, "Герой не выбран")
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DropDownList("heroAlly2", listHero, "Герой не выбран")
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DropDownList("heroAlly3", listHero, "Герой не выбран")
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DropDownList("heroAlly4", listHero, "Герой не выбран")
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DropDownList("heroAlly5", listHero, "Герой не выбран")
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td align="center">
+            <input type="submit" value="Посмотреть" />
+        </td>
+        <td align="center">
+            <input type="submit" value="Посмотреть" />
+        </td>
+    </tr>
+</table>
+
+<div>
+    <input type="submit" value="Посмотреть всех союзников" />
+</div>
+
+<br />
+<div>
+    <input type="submit" value="Посмотреть всё" />
 </div>
