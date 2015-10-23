@@ -1,7 +1,7 @@
 ﻿@{
     //ViewBag.Title = "Home Page";
 }
-
+<link href="~/Content/MainCSS.css" rel="stylesheet" />
 <h2>Dota 2 Helper</h2>
 
 <h3>Блокировка способностей предметами Black King Bar и Linken's Sphere</h3>
@@ -37,16 +37,18 @@
         new SelectListItem(){ Value="Warlock", Text="Warlock"},
     };
 }
-<table cellpadding="10" border="1">
+<table>
     <thead>ПРОТИВНИКИ</thead>
     <tr>
-        <td colspan="3" align="right">
+        <td colspan="5" align="right">
             <input type="checkbox" value="Показывать картинки" />Показывать картинки
         </td>
     </tr>
     <tr>
         <th>Выберите героев:</th>
+        <th rowspan="7"><img src="/Content/Images/separate_line.png" width="5" height="300"></th>
         <th>Блокируется Black King Bar <img style='width:25px; height:20px;' src=http://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Black_King_Bar_icon.png alt="BKB pic"></th>
+        <th rowspan="7"><img src="/Content/Images/separate_line.png" width="5" height="300"></th>
         <th>Блокируется Linken's Sphere <img style='width:25px; height:20px;' src=http://hydra-media.cursecdn.com/dota2.gamepedia.com/2/23/Linken%27s_Sphere_icon.png alt="LS pic"></th>
     </tr>
     <tr>
@@ -106,11 +108,12 @@
     };
 }
 <br />
-<table cellpadding="10" border="1">
+<table>
     <thead>СОЮЗНИКИ</thead>
     <tr>
-        <td>@Html.DropDownList("allyResTypes", allyResTypes)</td>
-        <td colspan="2" align="right">
+        <td></td>
+        <td align="right">@Html.DropDownList("allyResTypes", allyResTypes)</td>
+        <td align="right">
             <input type="checkbox" value="Показывать картинки" />Показывать картинки
         </td>
     </tr>
