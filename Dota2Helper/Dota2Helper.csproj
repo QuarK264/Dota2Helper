@@ -130,13 +130,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context.cs" />
+    <Compile Include="Controllers\HeroesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510092024274_Init.cs" />
-    <Compile Include="Migrations\201510092024274_Init.Designer.cs">
-      <DependentUpon>201510092024274_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201510141908212_dota2helper.cs" />
+    <Compile Include="Migrations\201510141908212_dota2helper.Designer.cs">
+      <DependentUpon>201510141908212_dota2helper.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Hero.cs" />
@@ -167,7 +168,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -182,6 +185,11 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Heroes\Create.cshtml" />
+    <Content Include="Views\Heroes\Delete.cshtml" />
+    <Content Include="Views\Heroes\Details.cshtml" />
+    <Content Include="Views\Heroes\Edit.cshtml" />
+    <Content Include="Views\Heroes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -197,8 +205,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510092024274_Init.resx">
-      <DependentUpon>201510092024274_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510141908212_dota2helper.resx">
+      <DependentUpon>201510141908212_dota2helper.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
