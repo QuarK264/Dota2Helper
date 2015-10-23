@@ -1,2 +1,42 @@
 ﻿body {
+    background-image: url("Images/bg.png");
+    background-repeat: repeat;
+    /*color: #d0cddd; -посерее*/
+    /*color: #c9c3dd; - более фиолетовый*/
+    /*color: #f1f0f5; - почти белый*/
+    color: #f4cb0e;
+    font-family:sans-serif;
+    margin-left: 80px;
+}
+
+h2 {
+    color: #f4cb0e;
+    text-align: right;
+}
+
+h3 {
+    /*color: #e1e0e7; - бледный сиреневато-серый (ближе к серому)*/
+    color: #f4cb0e;
+    margin-left: 20px;
+}
+
+p {
+    color: #cac8dd;
+    text-align: justify;
+    line-height: 25px;
+}
+
+table {
+    width:1200px;
+    font-family: Sylfaen;
+    font-size: 17px;
+}
+
+/*th {
+    border-right: 5px solid;
+    border-image: url("Images/separate_line.png") 30 round round;
+}*/
+
+td{
+    padding: 10px;
 }
