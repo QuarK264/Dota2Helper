@@ -9,9 +9,9 @@ namespace Dota2Helper.Repositories
     {
         private readonly Context _context;
 
-        public HeroRepository(Context context)
+        public HeroRepository()
         {
-            _context = context;
+            _context = new Context();
         }
 
         public async Task<ICollection<Hero>> GetAllAsync()
