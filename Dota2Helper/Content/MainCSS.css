@@ -27,7 +27,7 @@ p {
 }
 
 table {
-    width:1200px;
+    width:80%;
     font-family: Sylfaen;
     font-size: 17px;
 }
@@ -38,5 +38,9 @@ table {
 }*/
 
 td{
-    padding: 10px;
+    padding: 4px;
+}
+
+.dl-horizontal {
+    padding: 0;
 }
