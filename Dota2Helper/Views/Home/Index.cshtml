@@ -1,6 +1,9 @@
 ﻿@{
     //ViewBag.Title = "Home Page";
 }
+<title>Помощник Dota 2</title>
+
+<link href="~/Content/reset.css" rel="stylesheet" />
 <link href="~/Content/MainCSS.css" rel="stylesheet" />
 <h2>Dota 2 Helper</h2>
 
@@ -37,7 +40,7 @@
         new SelectListItem(){ Value="Warlock", Text="Warlock"},
     };
 }
-<table>
+<table border="1">
     <thead>ПРОТИВНИКИ</thead>
     <tr>
         <td colspan="5" align="right">
@@ -46,10 +49,14 @@
     </tr>
     <tr>
         <th>Выберите героев:</th>
-        <th rowspan="7"><img src="/Content/Images/separate_line.png" width="5" height="300"></th>
+        <th rowspan="9" style="background-image: url(/Content/Images/separate_line.png); background-repeat:round;"></th>
         <th>Блокируется Black King Bar <img style='width:25px; height:20px;' src=http://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Black_King_Bar_icon.png alt="BKB pic"></th>
-        <th rowspan="7"><img src="/Content/Images/separate_line.png" width="5" height="300"></th>
+        @*<th rowspan="9" style="background-image: url(/Content/Images/separate_line.png); background-repeat: round;"></th>*@
+        <th rowspan="9" width="5"><img src="/Content/Images/separate_line.png" width="5" height="300"></th>
         <th>Блокируется Linken's Sphere <img style='width:25px; height:20px;' src=http://hydra-media.cursecdn.com/dota2.gamepedia.com/2/23/Linken%27s_Sphere_icon.png alt="LS pic"></th>
+    </tr>
+    <tr>
+        <td colspan="5" class="dl-horizontal" style="background-image: url(/Content/Images/horizontal_line.png); background-repeat:round;"></td>
     </tr>
     <tr>
         <td>
@@ -87,9 +94,17 @@
         <td></td>
     </tr>
     <tr>
+        <td colspan="5" class="dl-horizontal" style="background-image: url(/Content/Images/horizontal_line.png); background-repeat:round;"></td>
+    </tr>
+    <tr>
         <td></td>
         <td align="center">
-            <input type="submit" value="Посмотреть" />
+            <input type="submit" value="Посмотреть">
+            <!-->
+                 <button type="submit" value="Посмотреть">
+                    <img src="/Content/Images/Result_one_button.png">
+                 </button>
+            </!-->
         </td>
         <td align="center">
             <input type="submit" value="Посмотреть" />
@@ -108,22 +123,29 @@
     };
 }
 <br />
+<br />
 <table>
     <thead>СОЮЗНИКИ</thead>
     <tr>
         <td></td>
+        <td></td>
         <td align="right">@Html.DropDownList("allyResTypes", allyResTypes)</td>
-        <td align="right">
+        <td colspan="2" align="right">
             <input type="checkbox" value="Показывать картинки" />Показывать картинки
         </td>
     </tr>
     <tr>
         <th>Выберите героев:</th>
+        <th rowspan="9" style="background-image: url(/Content/Images/separate_line.png); background-repeat: round;"></th>
         @*На месте слов "Блокируется" скорее всего будет частичное представление (для того, чтобы надпись менялась в зависимости от отображаемого результата,
 т.е. если в списке "allyResTypes" выбрано "Проходит", в шапке таблицы будет написано "Проходит через...", если выбрано "Блокируется", будет написано "Блокируется...");
             пока нельзя добавить, потому что нет модели*@
         <th>Блокируется Black King Bar <img style='width:25px; height:20px;' src=http://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Black_King_Bar_icon.png alt="BKB pic"></th>
+        <th rowspan="9" style="background-image: url(/Content/Images/separate_line.png); background-repeat: round;"></th>
         <th>Блокируется Linken's Sphere <img style='width:25px; height:20px;' src=http://hydra-media.cursecdn.com/dota2.gamepedia.com/2/23/Linken%27s_Sphere_icon.png alt="LS pic"></th>
+    </tr>
+    <tr>
+        <td colspan="5" class="dl-horizontal" style="background-image:url(/Content/Images/horizontal_line.png); background-repeat:round;"></td>
     </tr>
     <tr>
         <td>
@@ -159,6 +181,9 @@
         </td>
         <td></td>
         <td></td>
+    </tr>
+    <tr>
+        <td colspan="5" class="dl-horizontal" style="background-image:url(/Content/Images/horizontal_line.png); background-repeat:round;"></td>
     </tr>
     <tr>
         <td></td>
