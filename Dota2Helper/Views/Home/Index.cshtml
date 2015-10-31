@@ -40,7 +40,7 @@
         new SelectListItem(){ Value="Warlock", Text="Warlock"},
     };
 }
-<table border="1">
+<table>
     <thead>ПРОТИВНИКИ</thead>
     <tr>
         <td colspan="5" align="right">
@@ -49,14 +49,14 @@
     </tr>
     <tr>
         <th>Выберите героев:</th>
-        <th rowspan="9" style="background-image: url(/Content/Images/separate_line.png); background-repeat:round;"></th>
+        <th class="separator-vert" rowspan="9"></th>
         <th>Блокируется Black King Bar <img style='width:25px; height:20px;' src=http://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Black_King_Bar_icon.png alt="BKB pic"></th>
-        @*<th rowspan="9" style="background-image: url(/Content/Images/separate_line.png); background-repeat: round;"></th>*@
-        <th rowspan="9" width="5"><img src="/Content/Images/separate_line.png" width="5" height="300"></th>
+        <th class="separator-vert" rowspan="9"></th>
+        @*<th rowspan="9" width="5"><img src="/Content/Images/separate_line.png" width="5" height="300"></th>*@
         <th>Блокируется Linken's Sphere <img style='width:25px; height:20px;' src=http://hydra-media.cursecdn.com/dota2.gamepedia.com/2/23/Linken%27s_Sphere_icon.png alt="LS pic"></th>
     </tr>
     <tr>
-        <td colspan="5" class="dl-horizontal" style="background-image: url(/Content/Images/horizontal_line.png); background-repeat:round;"></td>
+        <td colspan="5" class="dl-horizontal"></td>
     </tr>
     <tr>
         <td>
@@ -94,7 +94,7 @@
         <td></td>
     </tr>
     <tr>
-        <td colspan="5" class="dl-horizontal" style="background-image: url(/Content/Images/horizontal_line.png); background-repeat:round;"></td>
+        <td colspan="5" class="dl-horizontal"></td>
     </tr>
     <tr>
         <td></td>
@@ -127,25 +127,23 @@
 <table>
     <thead>СОЮЗНИКИ</thead>
     <tr>
-        <td></td>
-        <td></td>
-        <td align="right">@Html.DropDownList("allyResTypes", allyResTypes)</td>
+        <td align="right" colspan="3">@Html.DropDownList("allyResTypes", allyResTypes)</td>
         <td colspan="2" align="right">
             <input type="checkbox" value="Показывать картинки" />Показывать картинки
         </td>
     </tr>
     <tr>
         <th>Выберите героев:</th>
-        <th rowspan="9" style="background-image: url(/Content/Images/separate_line.png); background-repeat: round;"></th>
+        <th class="separator-vert" rowspan="9"></th>
         @*На месте слов "Блокируется" скорее всего будет частичное представление (для того, чтобы надпись менялась в зависимости от отображаемого результата,
 т.е. если в списке "allyResTypes" выбрано "Проходит", в шапке таблицы будет написано "Проходит через...", если выбрано "Блокируется", будет написано "Блокируется...");
             пока нельзя добавить, потому что нет модели*@
         <th>Блокируется Black King Bar <img style='width:25px; height:20px;' src=http://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Black_King_Bar_icon.png alt="BKB pic"></th>
-        <th rowspan="9" style="background-image: url(/Content/Images/separate_line.png); background-repeat: round;"></th>
+        <th class="separator-vert" rowspan="9"></th>
         <th>Блокируется Linken's Sphere <img style='width:25px; height:20px;' src=http://hydra-media.cursecdn.com/dota2.gamepedia.com/2/23/Linken%27s_Sphere_icon.png alt="LS pic"></th>
     </tr>
     <tr>
-        <td colspan="5" class="dl-horizontal" style="background-image:url(/Content/Images/horizontal_line.png); background-repeat:round;"></td>
+        <td colspan="5" class="dl-horizontal"></td>
     </tr>
     <tr>
         <td>
@@ -183,7 +181,7 @@
         <td></td>
     </tr>
     <tr>
-        <td colspan="5" class="dl-horizontal" style="background-image:url(/Content/Images/horizontal_line.png); background-repeat:round;"></td>
+        <td colspan="5" class="dl-horizontal"></td>
     </tr>
     <tr>
         <td></td>
