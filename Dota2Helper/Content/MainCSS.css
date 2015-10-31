@@ -43,4 +43,13 @@ td{
 
 .dl-horizontal {
     padding: 0;
+    background-image: url(/Content/Images/horizontal_line.png);
+    background-repeat:round;
+    height:1px;
+}
+
+.separator-vert {
+    background-image: url(/Content/Images/separate_line.png);
+    background-repeat:round;
+    width:3px;
 }
