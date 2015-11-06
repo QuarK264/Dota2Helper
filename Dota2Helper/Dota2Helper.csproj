@@ -149,6 +149,9 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\bg.png" />
+    <Content Include="Content\Images\horizontal_line.png" />
+    <Content Include="Content\Images\Result_all_button.png" />
+    <Content Include="Content\Images\Result_one_button.png" />
     <Content Include="Content\Images\separate_line.png" />
     <Content Include="Content\MainCSS.css" />
     <Content Include="Content\reset.css" />
@@ -190,7 +193,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
