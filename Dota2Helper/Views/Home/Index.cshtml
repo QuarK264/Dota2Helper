@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Dota2Helper.Models.ViewModels.IndexViewModel
+
+@{
     ViewBag.Title = "Помощник Dota 2";
 }
 
@@ -8,19 +10,7 @@
 
 <h3>Блокировка способностей предметами Black King Bar и Linken's Sphere</h3>
 
-<p>
-    Узнайте, какие способности героев блокируются (или не блокируются) неуязвимостью к заклинаниям, которую дают предметы Black King Bar и Linken's Sphere.
-</p>
-<p>
-    Для начала выберите героев, для которых вы хотите узнать, какие их способности блокируются Black King Bar и Linken's Sphere. 
-    В поле "СОЮЗНИКИ" также можно посмотреть, какие способности проходят сквозь невосприимчивость к заклинаниям.
-</p>
-<p>
-    Результат можно посмотреть по одному из предметов, т.е. какие способности блокируются/не блокируются одним из предметов 
-    (кнопка "Посмотреть" под одним из столбцов - "Блокируется/Проходит через Black King Bar" или "Блокируется/Проходит через Linken's Sphere"), 
-    можно посмотреть результат для всех выбранных вражеских или союзных героев по обоим предметам (кнопка "Посмотреть всех противников/союзников" соответственно) 
-    или посмотреть результат по обоим предметам и для противников, и для союзников (кнопка "Посмотреть всё" внизу страницы)
-</p>
+
 
 <br />
 @{
@@ -59,35 +49,40 @@
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroEnemy1", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroEnemy1", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroEnemy2", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroEnemy2", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroEnemy3", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroEnemy3", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroEnemy4", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroEnemy4", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroEnemy5", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroEnemy5", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
@@ -146,35 +141,40 @@
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroAlly1", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroAlly1", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroAlly2", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroAlly2", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroAlly3", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroAlly3", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroAlly4", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroAlly4", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroAlly5", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroAlly5", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
@@ -198,5 +198,19 @@
 
 <br />
 <div>
-    <input type="submit" name="All" value="Посмотреть всё" />
+    <input type="submit" value="Посмотреть всё" />
 </div>
+
+<p>
+    Узнайте, какие способности героев блокируются (или не блокируются) неуязвимостью к заклинаниям, которую дают предметы Black King Bar и Linken's Sphere.
+</p>
+<p>
+    Для начала выберите героев, для которых вы хотите узнать, какие их способности блокируются Black King Bar и Linken's Sphere.
+    В поле "СОЮЗНИКИ" также можно посмотреть, какие способности проходят сквозь невосприимчивость к заклинаниям.
+</p>
+<p>
+    Результат можно посмотреть по одному из предметов, т.е. какие способности блокируются/не блокируются одним из предметов
+    (кнопка "Посмотреть" под одним из столбцов - "Блокируется/Проходит через Black King Bar" или "Блокируется/Проходит через Linken's Sphere"),
+    можно посмотреть результат для всех выбранных вражеских или союзных героев по обоим предметам (кнопка "Посмотреть всех противников/союзников" соответственно)
+    или посмотреть результат по обоим предметам и для противников, и для союзников (кнопка "Посмотреть всё" внизу страницы)
+</p>

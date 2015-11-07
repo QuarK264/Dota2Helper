@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 using System.Threading.Tasks;
 using Dota2Helper.Models;
 
@@ -9,9 +10,9 @@ namespace Dota2Helper.Repositories
     {
         private readonly Context _context;
 
-        public HeroRepository(Context context)
+        public HeroRepository()
         {
-            _context = context;
+            _context = new Context();
         }
 
         public async Task<ICollection<Hero>> GetAllAsync()
@@ -19,9 +20,10 @@ namespace Dota2Helper.Repositories
             return await _context.Heroes.Include(n => n.Skills).ToListAsync();
         }
 
-        public async Task<ICollection<Hero>> GetAllWithoutIncludeAsync()
+        public ICollection<Hero> GetAllWithoutIncludeAsync()
         {
-            return await _context.Heroes.ToListAsync();
+            //return await _context.Heroes.ToListAsync();
+            return _context.Heroes.ToList();
         }
 
         public async Task<Hero> GetHeroByIdAsync(int id)
