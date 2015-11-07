@@ -7,13 +7,13 @@ namespace Dota2Helper.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class dota2helper : IMigrationMetadata
+    public sealed partial class Init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(dota2helper));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201510141908212_dota2helper"; }
+            get { return "201511071838243_Init"; }
         }
         
         string IMigrationMetadata.Source

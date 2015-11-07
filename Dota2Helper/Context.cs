@@ -13,7 +13,8 @@ namespace Dota2Helper
         public DbSet<Hero> Heroes { get; set; }
         public DbSet<Skill> Skills { get; set; }
 
-        public Context() : base("Context")
+        public Context()
+            : base("localDota2helper")
         {
             
         }

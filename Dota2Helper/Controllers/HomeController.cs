@@ -4,14 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Dota2Helper.Models.ViewModels;
+using Dota2Helper.Repositories;
 
 namespace Dota2Helper.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly HeroRepository _heroRepository = new HeroRepository();
+
         public ActionResult Index()
         {
-            return View();
+            IndexViewModel model = new IndexViewModel();
+            //List<string> names = _heroRepository.GetAllWithoutIncludeAsync().Result.Select(n => n.Name).ToList();
+            model.HeroNames = _heroRepository.GetAllWithoutIncludeAsync().Select(n => n.Name).ToList();
+            return View(model);
         }
 
         public ActionResult About()

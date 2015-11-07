@@ -134,9 +134,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510141908212_dota2helper.cs" />
-    <Compile Include="Migrations\201510141908212_dota2helper.Designer.cs">
-      <DependentUpon>201510141908212_dota2helper.cs</DependentUpon>
+    <Compile Include="Migrations\201511071838243_Init.cs" />
+    <Compile Include="Migrations\201511071838243_Init.Designer.cs">
+      <DependentUpon>201511071838243_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Hero.cs" />
@@ -205,8 +205,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510141908212_dota2helper.resx">
-      <DependentUpon>201510141908212_dota2helper.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511071838243_Init.resx">
+      <DependentUpon>201511071838243_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

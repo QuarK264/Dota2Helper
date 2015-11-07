@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Dota2Helper.Models.ViewModels.IndexViewModel
+
+@{
     ViewBag.Title = "Помощник Dota 2";
 }
 
@@ -47,35 +49,40 @@
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroEnemy1", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroEnemy1", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroEnemy2", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroEnemy2", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroEnemy3", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroEnemy3", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroEnemy4", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroEnemy4", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroEnemy5", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroEnemy5", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
@@ -134,35 +141,40 @@
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroAlly1", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroAlly1", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroAlly2", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroAlly2", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroAlly3", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroAlly3", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroAlly4", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroAlly4", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td>
-            @Html.DropDownList("heroAlly5", listHero, "Герой не выбран")
+            @*@Html.DropDownList("heroAlly5", listHero, "Герой не выбран")*@
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
         <td></td>
