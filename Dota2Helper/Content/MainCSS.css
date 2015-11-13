@@ -53,3 +53,69 @@ td{
     background-repeat:round;
     width:3px;
 }
+
+.button {
+  padding: 0;
+  text-indent: -9999px; 
+  line-height: 0; 
+  border: 0; 
+  background-repeat: round; 
+  
+}
+
+.button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+} 
+
+.button:active,
+.button:focus {
+  outline: 0;
+}
+
+.button:active {
+  text-indent: -9999px; 
+  line-height: 0; 
+  border: 0; 
+  background-repeat: round;
+}
+
+.resultOne {
+    background-image: url(/Content/Images/Result_one_button.png);
+    width: 90px;
+    height: 26px;
+}
+
+.resultOne:active {
+    background-image: url(/Content/Images/Result_one_button_pressed_lighter.png);
+}
+
+.resultAll {
+    background-image: url("/Content/Images/Result_all_button.png");
+    width: 140px;
+    height: 30px;
+}
+
+.resultAll:active {
+    background-image: url("/Content/Images/Result_all_button_pressed_lighter.png");
+}
+
+.resultAllAllies {
+    background-image: url("/Content/Images/Result_all_allies_button.png");
+    width: 200px;
+    height: 30px;
+}
+
+.resultAllAllies:active {
+    background-image: url("/Content/Images/Result_all_allies_button_pressed.png");
+}
+
+.resultAllEnemies {
+    background-image: url("/Content/Images/Result_all_enemies_button.png");
+    width: 240px;
+    height: 30px;
+}
+
+.resultAllEnemies:active {
+    background-image: url("/Content/Images/Result_all_enemies_button_pressed.png");
+}
