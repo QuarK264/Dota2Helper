@@ -138,9 +138,9 @@
     <Compile Include="Migrations\201511071838243_Init.Designer.cs">
       <DependentUpon>201511071838243_Init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511140901441_DeleteHeroDscr.cs" />
-    <Compile Include="Migrations\201511140901441_DeleteHeroDscr.Designer.cs">
-      <DependentUpon>201511140901441_DeleteHeroDscr.cs</DependentUpon>
+    <Compile Include="Migrations\201511140901441_DeleteHeroDscr.Designer.cs" />
+    <Compile Include="Migrations\201511140901441_DeleteHeroDscr.Designer.Designer.cs">
+      <DependentUpon>201511140901441_DeleteHeroDscr.Designer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Hero.cs" />
@@ -155,8 +155,16 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\bg.png" />
     <Content Include="Content\Images\horizontal_line.png" />
+    <Content Include="Content\Images\Result_all_allies_button.png" />
+    <Content Include="Content\Images\Result_all_allies_button_pressed.png" />
     <Content Include="Content\Images\Result_all_button.png" />
+    <Content Include="Content\Images\Result_all_button_pressed.png" />
+    <Content Include="Content\Images\Result_all_button_pressed_lighter.png" />
+    <Content Include="Content\Images\Result_all_enemies_button.png" />
+    <Content Include="Content\Images\Result_all_enemies_button_pressed.png" />
     <Content Include="Content\Images\Result_one_button.png" />
+    <Content Include="Content\Images\Result_one_button_pressed.png" />
+    <Content Include="Content\Images\Result_one_button_pressed_lighter.png" />
     <Content Include="Content\Images\separate_line.png" />
     <Content Include="Content\MainCSS.css" />
     <Content Include="Content\reset.css" />
@@ -215,8 +223,8 @@
     <EmbeddedResource Include="Migrations\201511071838243_Init.resx">
       <DependentUpon>201511071838243_Init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511140901441_DeleteHeroDscr.resx">
-      <DependentUpon>201511140901441_DeleteHeroDscr.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511140901441_DeleteHeroDscr.Designer.resx">
+      <DependentUpon>201511140901441_DeleteHeroDscr.Designer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
