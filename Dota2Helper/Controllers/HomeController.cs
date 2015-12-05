@@ -12,7 +12,7 @@ namespace Dota2Helper.Controllers
     public class HomeController : Controller
     {
         private readonly HeroRepository _heroRepository = new HeroRepository();
-        private readonly HeroRepository _heroRepository = new HeroRepository();
+        //private readonly HeroRepository _heroRepository = new HeroRepository();
 
         public ActionResult Index()
         {
@@ -28,7 +28,7 @@ namespace Dota2Helper.Controllers
             List<BlockBKBPartialViewModel> skills = new List<BlockBKBPartialViewModel>();
             foreach (var name in names)
             {
-                skills.Add(_heroRepository.GetHeroByNameAsync(name));
+                //skills.Add(_heroRepository.GetHeroByNameAsync(name));
             }
             return PartialView(skills);
         }
