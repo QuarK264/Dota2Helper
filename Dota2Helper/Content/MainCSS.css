@@ -17,6 +17,9 @@ h2 {
 h3 {
     /*color: #e1e0e7; - бледный сиреневато-серый (ближе к серому)*/
     color: #f4cb0e;
+}
+
+.main-subtitle {
     margin-left: 20px;
 }
 
