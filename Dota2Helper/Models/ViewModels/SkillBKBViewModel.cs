@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Dota2Helper.Models.ViewModels
+﻿namespace Dota2Helper.Models.ViewModels
 {
-    public class BlockBKBPartialViewModel
+    public class SkillBKBViewModel
     {
         public string SkillName { get; set; }
         public byte PoolNumber { get; set; }

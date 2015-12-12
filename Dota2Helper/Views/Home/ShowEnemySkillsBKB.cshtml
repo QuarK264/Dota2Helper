@@ -1,0 +1,16 @@
+﻿@using Dota2Helper.Models.ViewModels
+@model Dota2Helper.Models.ViewModels.EnemysBlockBKBPartialViewModel
+
+<table>
+    @foreach (EnemyBlockBKBViewModel enemy in Model.Enemys)
+    {
+        <tr>
+            @foreach (SkillBKBViewModel skill in enemy.EnemySkills.Where(skill => skill.SkillName != null))
+            {
+                <td>
+                    <img src="@skill.ImageLink" alt="@skill.PoolNumber" />
+                </td>
+            }
+        </tr>
+    }
+</table>

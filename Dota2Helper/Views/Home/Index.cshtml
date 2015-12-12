@@ -13,22 +13,7 @@
 
 
 <br />
-@{
-    List<SelectListItem> listHero = new List<SelectListItem>()
-    {
-        new SelectListItem(){ Value="Abaddon", Text="Abaddon"},
-        new SelectListItem(){ Value="Anti-mage", Text="Anti-mage"},
-        new SelectListItem(){ Value="Axe", Text="Axe"},
-        new SelectListItem(){ Value="Beastmaster", Text="Beastmaster"},
-        new SelectListItem(){ Value="Bloodseeker", Text="Bloodseeker"},
-        new SelectListItem(){ Value="Dragon Knight", Text="Dragon Knight"},
-        new SelectListItem(){ Value="Earthshaker", Text="Earthshaker"},
-        new SelectListItem(){ Value="Necrophos", Text="Necrophos"},
-        new SelectListItem(){ Value="Pudge", Text="Pudge"},
-        new SelectListItem(){ Value="Razor", Text="Razor"},
-        new SelectListItem(){ Value="Warlock", Text="Warlock"},
-    };
-}
+
 <table>
     <thead>ПРОТИВНИКИ</thead>
     <tr>
@@ -39,66 +24,65 @@
     <tr>
         <th>Выберите героев:</th>
         <th class="separator-vert" rowspan="9"></th>
-        <th>Блокируется Black King Bar <img style='width:25px; height:20px;' src=http://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Black_King_Bar_icon.png alt="BKB pic"></th>
+        <th>Блокируется Black King Bar <img style="width:25px; height:20px;" src="http://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Black_King_Bar_icon.png" alt="BKB pic"></th>
         <th class="separator-vert" rowspan="9"></th>
         @*<th rowspan="9" width="5"><img src="/Content/Images/separate_line.png" width="5" height="300"></th>*@
-        <th>Блокируется Linken's Sphere <img style='width:25px; height:20px;' src=http://hydra-media.cursecdn.com/dota2.gamepedia.com/2/23/Linken%27s_Sphere_icon.png alt="LS pic"></th>
+        <th>Блокируется Linken's Sphere <img style="width:25px; height:20px;" src="http://hydra-media.cursecdn.com/dota2.gamepedia.com/2/23/Linken%27s_Sphere_icon.png" alt="LS pic"></th>
     </tr>
     <tr>
         <td colspan="5" class="dl-horizontal"></td>
     </tr>
-    <tr>
-        <td>
-            @*@Html.DropDownList("heroEnemy1", listHero, "Герой не выбран")*@
-            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
-        </td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>
-            @*@Html.DropDownList("heroEnemy2", listHero, "Герой не выбран")*@
-            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
-        </td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>
-            @*@Html.DropDownList("heroEnemy3", listHero, "Герой не выбран")*@
-            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
-        </td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>
-            @*@Html.DropDownList("heroEnemy4", listHero, "Герой не выбран")*@
-            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
-        </td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>
-            @*@Html.DropDownList("heroEnemy5", listHero, "Герой не выбран")*@
-            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
-        </td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td colspan="5" class="dl-horizontal"></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td align="center">
-            <input type="image" class="button resultOne" name="EnemyBKB" value="Посмотреть">
-        </td>
-        <td align="center">
-            <input type="image" class="button resultOne" name="EnemyLS" value="Посмотреть" />
-        </td>
-    </tr>
+    @using (Ajax.BeginForm("ShowEnemySkillsBKB", new AjaxOptions { UpdateTargetId = "EnemyBKB" }))
+    {
+        <tr>
+            <td>
+                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
+            </td>
+            <td rowspan="5">
+                <div id="EnemyBKB">
+                    
+                </div>
+            </td>
+            <td rowspan="5">
+                <div id="EnemyLS">
+                    
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" class="dl-horizontal"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td align="center">
+                <input type="image" class="button resultOne" name="EnemyBKB" value="Посмотреть">
+            </td>
+
+            <td align="center">
+                <input type="image" class="button resultOne" name="EnemyLS" value="Посмотреть"/>
+            </td>
+        </tr>
+    }
 </table>
 
 <div>
@@ -136,7 +120,6 @@
     </tr>
     <tr>
         <td>
-            @*@Html.DropDownList("heroAlly1", listHero, "Герой не выбран")*@
             @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
@@ -144,7 +127,6 @@
     </tr>
     <tr>
         <td>
-            @*@Html.DropDownList("heroAlly2", listHero, "Герой не выбран")*@
             @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
@@ -152,7 +134,6 @@
     </tr>
     <tr>
         <td>
-            @*@Html.DropDownList("heroAlly3", listHero, "Герой не выбран")*@
             @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>
@@ -160,7 +141,6 @@
     </tr>
     <tr>
         <td>
-            @*@Html.DropDownList("heroAlly4", listHero, "Герой не выбран")*@
             @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
         </td>
         <td></td>

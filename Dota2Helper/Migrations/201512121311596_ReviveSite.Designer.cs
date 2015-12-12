@@ -7,13 +7,13 @@ namespace Dota2Helper.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class DeleteHeroesDesc : IMigrationMetadata
+    public sealed partial class ReviveSite : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DeleteHeroesDesc));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ReviveSite));
         
         string IMigrationMetadata.Id
         {
-            get { return "201511141539583_DeleteHeroesDesc"; }
+            get { return "201512121311596_ReviveSite"; }
         }
         
         string IMigrationMetadata.Source
