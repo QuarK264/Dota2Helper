@@ -25,28 +25,11 @@ namespace Dota2Helper.Controllers
         public ActionResult ShowEnemySkillsBKB(string[] heroNames)
         {
             EnemysBlockBKBPartialViewModel skills = new EnemysBlockBKBPartialViewModel();
-            skills.Enemys = new List<EnemyBlockBKBViewModel>()
-            {
-                new EnemyBlockBKBViewModel(),
-                new EnemyBlockBKBViewModel(),
-                new EnemyBlockBKBViewModel(),
-                new EnemyBlockBKBViewModel(),
-                new EnemyBlockBKBViewModel()
-            };
-            Hero hero = new Hero();
+            Hero hero;
             for (int i = 0; i < heroNames.Length; i++)
             {
                 hero = _heroRepository.GetHeroByNameAsync(heroNames[i]);
-                skills.Enemys[i].EnemySkills = new List<SkillBKBViewModel>()
-                {
-                    new SkillBKBViewModel(),
-                    new SkillBKBViewModel(),
-                    new SkillBKBViewModel(),
-                    new SkillBKBViewModel(),
-                    new SkillBKBViewModel(),
-                    new SkillBKBViewModel(),
-                    new SkillBKBViewModel()
-                };
+                skills.Enemys[i] = new EnemyBlockBKBViewModel();
                 for (int j = 0; j < hero.Skills.Count; j++)
                 {
                     skills.Enemys[i].EnemySkills[j].SkillName = hero.Skills.ToList()[j].SkillName;
@@ -57,6 +40,27 @@ namespace Dota2Helper.Controllers
                 }
             }
             return PartialView(skills);
+        }
+
+        [HttpPost]
+        public ActionResult ShowEnemySkillsLS(string[] heroNames)
+        {
+            EnemysBlockLSPartialViewModel skills = new EnemysBlockLSPartialViewModel();
+            Hero hero;
+            for (int i = 0; i < heroNames.Length; i++)
+            {
+                hero = _heroRepository.GetHeroByNameAsync(heroNames[i]);
+                skills.Enemys[i] = new EnemyBlockLSViewModel();
+                for (int j = 0; j < hero.Skills.Count; j++)
+                {
+                    skills.Enemys[i].EnemySkills[j].SkillName = hero.Skills.ToList()[j].SkillName;
+                    skills.Enemys[i].EnemySkills[j].ImageLink = hero.Skills.ToList()[j].ImageLink;
+                    skills.Enemys[i].EnemySkills[j].BlockLS = hero.Skills.ToList()[j].BlockLS;
+                    skills.Enemys[i].EnemySkills[j].CommentLS = hero.Skills.ToList()[j].CommentLS;
+                    skills.Enemys[i].EnemySkills[j].PoolNumber = hero.Skills.ToList()[j].PoolNumber;
+                }
+            }
+            return PartialView();
         }
     }
 }

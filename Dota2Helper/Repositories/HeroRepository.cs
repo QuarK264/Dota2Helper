@@ -21,7 +21,7 @@ namespace Dota2Helper.Repositories
         }
 
         //public async Task<ICollection<Hero>> GetAllWithoutIncludeAsync()
-        public  ICollection<Hero> GetAllWithoutIncludeAsync()
+        public ICollection<Hero> GetAllWithoutIncludeAsync()
         {
             //return await _context.Heroes.ToListAsync();
             return _context.Heroes.ToList();
@@ -33,7 +33,7 @@ namespace Dota2Helper.Repositories
         }
 
         //public async Task<Hero> GetHeroByNameAsync(string name)
-        public  Hero GetHeroByNameAsync(string name)
+        public Hero GetHeroByNameAsync(string name)
         {
             //return await _context.Heroes.FirstOrDefaultAsync(n => n.Name == name);
             return _context.Heroes.FirstOrDefault(n => n.Name == name);
