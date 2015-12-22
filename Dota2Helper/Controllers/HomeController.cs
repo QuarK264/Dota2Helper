@@ -60,7 +60,7 @@ namespace Dota2Helper.Controllers
                     skills.Enemys[i].EnemySkills[j].PoolNumber = hero.Skills.ToList()[j].PoolNumber;
                 }
             }
-            return PartialView();
+            return PartialView(skills);
         }
     }
 }

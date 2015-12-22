@@ -19,7 +19,7 @@
     <thead>ПРОТИВНИКИ</thead>
     <tr>
         <td colspan="5" align="right">
-            <input type="checkbox" value="Показывать картинки"/>Показывать картинки
+            <input type="checkbox" value="Показывать картинки" />Показывать картинки
         </td>
     </tr>
     <tr>
@@ -33,61 +33,58 @@
     <tr>
         <td colspan="5" class="dl-horizontal"></td>
     </tr>
-    @using (Ajax.BeginForm("ShowEnemySkillsBKB", new AjaxOptions {UpdateTargetId = "EnemyBKB"}))
-    {
-        <tr>
-            <td>
-                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
-            </td>
-            <td rowspan="5">
-                <div id="EnemyBKB">
+    <tr>
+        <td>
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "enemy-name" })
+        </td>
+        <td rowspan="5">
+            <div id="EnemyBKB">
 
-                </div>
-            </td>
-            <td rowspan="5">
-                <div id="EnemyLS">
+            </div>
+        </td>
+        <td rowspan="5">
+            <div id="EnemyLS">
 
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
-            </td>
-        </tr>
-        <tr>
-            <td colspan="5" class="dl-horizontal"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td align="center">
-                <input type="image" class="button resultOne" name="EnemyBKB" value="Посмотреть">
-            </td>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "enemy-name" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "enemy-name" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "enemy-name" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "enemy-name" })
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5" class="dl-horizontal"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td align="center">
+            <input type="image" class="button resultOne" name="EnemyBKB" onclick="ShowEnemyBKB()" value="Посмотреть">
+        </td>
 
-            <td align="center">
-                <input type="image" class="button resultOne" name="EnemyLS" value="Посмотреть"/>
-            </td>
-        </tr>
-    }
+        <td align="center">
+            <input type="image" class="button resultOne" name="EnemyLS" onclick="ShowEnemyLS()" value="Посмотреть" />
+        </td>
+    </tr>
 </table>
 
 <div>
-    <input type="image" class="button resultAllEnemies" name="AllEnemies" value="Посмотреть всех противников" />
+    <input type="image" class="button resultAllEnemies" name="AllEnemies" onclick="ShowAllEnemies()" value="Посмотреть всех противников" />
 </div>
 
 @{
@@ -110,20 +107,18 @@
         <th>Выберите героев:</th>
         <th class="separator-vert" rowspan="9"></th>
         @*На месте слов "Блокируется" скорее всего будет частичное представление (для того, чтобы надпись менялась в зависимости от отображаемого результата,
-т.е. если в списке "allyResTypes" выбрано "Проходит", в шапке таблицы будет написано "Проходит через...", если выбрано "Блокируется", будет написано "Блокируется...");
-            пока нельзя добавить, потому что нет модели*@
-        <th>Блокируется Black King Bar <img style='width:25px; height:20px;' src=http://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Black_King_Bar_icon.png alt="BKB pic"></th>
+            т.е. если в списке "allyResTypes" выбрано "Проходит", в шапке таблицы будет написано "Проходит через...", если выбрано "Блокируется", будет написано "Блокируется...");
+                        пока нельзя добавить, потому что нет модели*@
+        <th>Блокируется Black King Bar <img style="width:25px; height:20px;" src="http://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Black_King_Bar_icon.png" alt="BKB pic"></th>
         <th class="separator-vert" rowspan="9"></th>
-        <th>Блокируется Linken's Sphere <img style='width:25px; height:20px;' src=http://hydra-media.cursecdn.com/dota2.gamepedia.com/2/23/Linken%27s_Sphere_icon.png alt="LS pic"></th>
+        <th>Блокируется Linken's Sphere <img style="width:25px; height:20px;" src="http://hydra-media.cursecdn.com/dota2.gamepedia.com/2/23/Linken%27s_Sphere_icon.png" alt="LS pic"></th>
     </tr>
     <tr>
         <td colspan="5" class="dl-horizontal"></td>
     </tr>
-    @using (Ajax.BeginForm("ShowEnemySkillsBKB", new AjaxOptions {UpdateTargetId = "AllyBKB"}))
-    {
         <tr>
             <td>
-                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
+                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "ally-name" })
             </td>
             <td rowspan="5">
                 <div id="AllyBKB">
@@ -138,22 +133,22 @@
         </tr>
         <tr>
             <td>
-                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
+                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "ally-name" })
             </td>
         </tr>
         <tr>
             <td>
-                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
+                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "ally-name" })
             </td>
         </tr>
         <tr>
             <td>
-                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
+                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "ally-name" })
             </td>
         </tr>
         <tr>
             <td>
-                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран")
+                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "ally-name" })
             </td>
         </tr>
         <tr>
@@ -162,21 +157,20 @@
         <tr>
             <td></td>
             <td align="center">
-            <input type="image" class="button resultOne" name="AllyBKB" value="Посмотреть"/>
+                <input type="image" class="button resultOne" name="AllyBKB" onclick="ShowAllyBKB()" value="Посмотреть" />
             <td align="center">
-                <input type="image" class="button resultOne" name="AllyLS" value="Посмотреть"/>
+                <input type="image" class="button resultOne" name="AllyLS" onclick="ShowAllyLS()" value="Посмотреть" />
             </td>
         </tr>
-    }
 </table>
 
 <div>
-    <input type="image" class="button resultAllAllies" name="AllAllies" value="Посмотреть всех союзников" />
+    <input type="image" class="button resultAllAllies" name="AllAllies" onclick="ShowAllAllies()" value="Посмотреть всех союзников" />
 </div>
 
 <br />
 <div>
-    <input type="image" class="button resultAll" name="All" value="Посмотреть всё" />
+    <input type="image" class="button resultAll" name="All" onclick="ShowAll()" value="Посмотреть всё" />
 </div>
 
 <p>
@@ -192,3 +186,94 @@
     можно посмотреть результат для всех выбранных вражеских или союзных героев по обоим предметам (кнопка "Посмотреть всех противников/союзников" соответственно)
     или посмотреть результат по обоим предметам и для противников, и для союзников (кнопка "Посмотреть всё" внизу страницы)
 </p>
+
+<script>
+    function CollectEnemyNames() {
+        var names = $('.enemy-name :selected').each(function () {
+            $(this).val();
+        });
+        return [names[0].innerHTML,
+                names[1].innerHTML,
+                names[2].innerHTML,
+                names[3].innerHTML,
+                names[4].innerHTML];
+    }
+
+    function ShowEnemyBKB() {
+        var names = CollectEnemyNames();
+        $.ajax({
+            type: 'POST',
+            url: '/home/ShowEnemySkillsBKB',
+            contentType: 'application/json',
+            data: JSON.stringify(names),
+            success: function (data) {
+                $('#EnemyBKB').html(data);
+            }
+        });
+    }
+
+    function ShowEnemyLS() {
+        var names = CollectEnemyNames();
+        $.ajax({
+            type: 'POST',
+            url: '/home/ShowEnemySkillsLS',
+            contentType: 'application/json',
+            data: JSON.stringify(names),
+            success: function(data) {
+                $('#EnemyLS').html(data);
+            }
+        });
+    }
+
+    function ShowAllEnemies() {
+        ShowEnemyBKB();
+        ShowEnemyLS();
+    }
+
+    function CollectAllyNames() {
+        var names = $('.ally-name :selected').each(function () {
+            $(this).val();
+        });
+        return [names[0].innerHTML,
+                names[1].innerHTML,
+                names[2].innerHTML,
+                names[3].innerHTML,
+                names[4].innerHTML];
+    }
+
+    function ShowAllyBKB() {
+        var names = CollectEnemyNames();
+        $.ajax({
+            type: 'POST',
+            url: '/home/ShowEnemySkillsBKB',
+            contentType: 'application/json',
+            data: JSON.stringify(names),
+            success: function (data) {
+                $('#AllyBKB').html(data);
+            }
+        });
+    }
+
+    function ShowAllyLS() {
+        var names = CollectEnemyNames();
+        $.ajax({
+            type: 'POST',
+            url: '/home/ShowEnemySkillsLS',
+            contentType: 'application/json',
+            data: JSON.stringify(names),
+            success: function (data) {
+                $('#AllyLS').html(data);
+            }
+        });
+    }
+
+    function ShowAllAllies() {
+        ShowAllyBKB();
+        ShowAllyLS();
+    }
+
+    function ShowAll() {
+        ShowAllEnemies();
+        ShowAllAllies();
+    }
+</script>
