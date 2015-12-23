@@ -8,6 +8,7 @@
             @foreach (SkillLSViewModel skill in enemy.EnemySkills.Where(skill => skill.SkillName != null))
             {
                 <td>
+                    <div class="substrate"></div>
                     <img src="@skill.ImageLink" alt="@skill.PoolNumber" />
                 </td>
             }
