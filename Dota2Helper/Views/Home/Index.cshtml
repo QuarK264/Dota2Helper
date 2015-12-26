@@ -19,7 +19,7 @@
     <thead>ПРОТИВНИКИ</thead>
     <tr>
         <td colspan="5" align="right">
-            <input type="checkbox" value="Показывать картинки" />Показывать картинки
+            <input type="checkbox" value="Показывать картинки" checked />Показывать картинки
         </td>
     </tr>
     <tr>
@@ -100,7 +100,7 @@
     <tr>
         <td align="right" colspan="3">@Html.DropDownList("allyResTypes", allyResTypes)</td>
         <td colspan="2" align="right">
-            <input type="checkbox" value="Показывать картинки" />Показывать картинки
+            <input type="checkbox" value="Показывать картинки" checked />Показывать картинки
         </td>
     </tr>
     <tr>
@@ -109,9 +109,9 @@
         @*На месте слов "Блокируется" скорее всего будет частичное представление (для того, чтобы надпись менялась в зависимости от отображаемого результата,
             т.е. если в списке "allyResTypes" выбрано "Проходит", в шапке таблицы будет написано "Проходит через...", если выбрано "Блокируется", будет написано "Блокируется...");
                         пока нельзя добавить, потому что нет модели*@
-        <th>Блокируется Black King Bar <img style="width:25px; height:20px;" src="http://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Black_King_Bar_icon.png" alt="BKB pic"></th>
+        <th>Проходит Black King Bar <img style="width:25px; height:20px;" src="http://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Black_King_Bar_icon.png" alt="BKB pic"></th>
         <th class="separator-vert" rowspan="9"></th>
-        <th>Блокируется Linken's Sphere <img style="width:25px; height:20px;" src="http://hydra-media.cursecdn.com/dota2.gamepedia.com/2/23/Linken%27s_Sphere_icon.png" alt="LS pic"></th>
+        <th>Проходит Linken's Sphere <img style="width:25px; height:20px;" src="http://hydra-media.cursecdn.com/dota2.gamepedia.com/2/23/Linken%27s_Sphere_icon.png" alt="LS pic"></th>
     </tr>
     <tr>
         <td colspan="5" class="dl-horizontal"></td>
@@ -252,14 +252,14 @@
     }
 
     function ShowAllyBKB() {
-        var names = CollectEnemyNames();
+        var names = CollectAllyNames();
         if ($.inArray("Герой не выбран", names) + 1) {
             alert("Пожалуйста, выберите 5 союзных героев.");
         }
         else {
             $.ajax({
                 type: 'POST',
-                url: '/home/ShowEnemySkillsBKB',
+                url: '/home/ShowAllySkillsBKB',
                 contentType: 'application/json',
                 data: JSON.stringify(names),
                 success: function (data) {
@@ -270,14 +270,14 @@
     }
 
     function ShowAllyLS() {
-        var names = CollectEnemyNames();
+        var names = CollectAllyNames();
         if ($.inArray("Герой не выбран", names) + 1) {
             alert("Пожалуйста, выберите 5 союзных героев.");
         }
         else {
             $.ajax({
                 type: 'POST',
-                url: '/home/ShowEnemySkillsLS',
+                url: '/home/ShowAllySkillsLS',
                 contentType: 'application/json',
                 data: JSON.stringify(names),
                 success: function (data) {

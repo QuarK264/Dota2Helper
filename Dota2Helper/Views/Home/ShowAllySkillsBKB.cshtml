@@ -1,18 +1,18 @@
 ﻿@using Dota2Helper.Models.ViewModels
-@model EnemysBlockLSPartialViewModel
+@model EnemysBlockBKBPartialViewModel
 
 <table>
-    @foreach (EnemyBlockLSViewModel enemy in Model.Enemys)
+    @foreach (EnemyBlockBKBViewModel enemy in Model.Enemys)
     {
         <tr>
-            @foreach (SkillLSViewModel skill in enemy.EnemySkills.Where(skill => skill.SkillName != null && skill.BlockLS))
+            @foreach (SkillBKBViewModel skill in enemy.EnemySkills.Where(skill => skill.SkillName != null && !skill.BlockBKB))
             {
-                if (skill.CommentLS != null)
+                if (skill.CommentBKB != null)
                 {
                      <td>
                          <div class="substrate"></div>
                          <img src="@skill.ImageLink" alt="@skill.PoolNumber" width="38" height="38" class="partly-block-icon"/>
-                         <div class="pop-comment">@skill.CommentLS</div>
+                         <div class="pop-comment">@skill.CommentBKB</div>
                      </td>
                 }
                 else

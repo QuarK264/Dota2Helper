@@ -130,8 +130,7 @@ td{
 
 /*подложка под иконку скила*/
 .substrate {
-    display: normal;
-    position:absolute;
+    position: absolute;
     width: 38px;
     height: 38px;
     background-color: #403E3E;
@@ -144,3 +143,12 @@ td{
 
 /*класс .substrate имеют все div-подложки, 
 а тем div, которые не отображаются, дополнительно задаётся класс .no-substrate*/
+
+/*класс для комментария, всплывающего при наведении мышкой на картинку скила*/
+.pop-comment {
+    
+}
+
+.pop-comment:hover {
+    
+}

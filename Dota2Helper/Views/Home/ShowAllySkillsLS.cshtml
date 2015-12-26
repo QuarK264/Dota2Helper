@@ -5,7 +5,7 @@
     @foreach (EnemyBlockLSViewModel enemy in Model.Enemys)
     {
         <tr>
-            @foreach (SkillLSViewModel skill in enemy.EnemySkills.Where(skill => skill.SkillName != null && skill.BlockLS))
+            @foreach (SkillLSViewModel skill in enemy.EnemySkills.Where(skill => skill.SkillName != null && !skill.BlockLS))
             {
                 if (skill.CommentLS != null)
                 {

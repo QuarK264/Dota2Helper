@@ -5,12 +5,23 @@
     @foreach (EnemyBlockBKBViewModel enemy in Model.Enemys)
     {
         <tr>
-            @foreach (SkillBKBViewModel skill in enemy.EnemySkills.Where(skill => skill.SkillName != null))
+            @foreach (SkillBKBViewModel skill in enemy.EnemySkills.Where(skill => skill.SkillName != null && skill.BlockBKB))
             {
+                if (skill.CommentBKB != null)
+                {
+                     <td>
+                         <div class="substrate"></div>
+                         <img src="@skill.ImageLink" alt="@skill.PoolNumber" width="38" height="38" class="partly-block-icon"/>
+                         <div class="pop-comment">@skill.CommentBKB</div>
+                     </td>
+                }
+                else
+                {
                 <td>
-                    <div class="substrate"></div>
-                    <img src="@skill.ImageLink" alt="@skill.PoolNumber" />
+                    <div class="no-substrate"></div>
+                    <img src="@skill.ImageLink" alt="@skill.PoolNumber" width="38" height="38"/>
                 </td>
+                }
             }
         </tr>
     }
