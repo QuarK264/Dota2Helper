@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Mvc;
 using Dota2Helper.Models;
 using Dota2Helper.Models.ViewModels;
@@ -15,8 +14,8 @@ namespace Dota2Helper.Controllers
         {
             IndexViewModel model = new IndexViewModel
             {
-                HeroNames = _heroRepository.GetAllWithoutIncludeAsync().Select(n => n.Name).ToList()
-                //HeroNames = _heroRepository.GetAllWithoutIncludeAsync().Result.Select(n => n.Name).ToList();
+                HeroNames = _heroRepository.GetAllWithoutIncludeAsync().Select(n => n.Name).OrderBy(n => n).ToList()
+                //HeroNames = _heroRepository.GetAllWithoutIncludeAsync().Result.Select(n => n.Name).OrderBy(n => n).ToList()
             };
             return View(model);
         }

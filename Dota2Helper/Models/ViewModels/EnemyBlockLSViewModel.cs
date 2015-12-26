@@ -16,6 +16,14 @@ namespace Dota2Helper.Models.ViewModels
                 new SkillLSViewModel(),
                 new SkillLSViewModel(),
                 new SkillLSViewModel(),
+                new SkillLSViewModel(),
+                new SkillLSViewModel(),
+                new SkillLSViewModel(),
+                new SkillLSViewModel(),
+                new SkillLSViewModel(),
+                new SkillLSViewModel(),
+                new SkillLSViewModel(),
+                new SkillLSViewModel(),
                 new SkillLSViewModel()
             };
         }

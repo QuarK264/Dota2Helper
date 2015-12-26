@@ -116,52 +116,52 @@
     <tr>
         <td colspan="5" class="dl-horizontal"></td>
     </tr>
-        <tr>
-            <td>
-                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "ally-name" })
-            </td>
-            <td rowspan="5">
-                <div id="AllyBKB">
+    <tr>
+        <td>
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "ally-name" })
+        </td>
+        <td rowspan="5">
+            <div id="AllyBKB">
 
-                </div>
-            </td>
-            <td rowspan="5">
-                <div id="AllyLS">
+            </div>
+        </td>
+        <td rowspan="5">
+            <div id="AllyLS">
 
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "ally-name" })
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "ally-name" })
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "ally-name" })
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "ally-name" })
-            </td>
-        </tr>
-        <tr>
-            <td colspan="5" class="dl-horizontal"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td align="center">
-                <input type="image" class="button resultOne" name="AllyBKB" onclick="ShowAllyBKB()" value="Посмотреть" />
-            <td align="center">
-                <input type="image" class="button resultOne" name="AllyLS" onclick="ShowAllyLS()" value="Посмотреть" />
-            </td>
-        </tr>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "ally-name" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "ally-name" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "ally-name" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DropDownListFor(x => x.HeroNames, new SelectList(Model.HeroNames, "Text"), "Герой не выбран", new { @class = "ally-name" })
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5" class="dl-horizontal"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td align="center">
+            <input type="image" class="button resultOne" name="AllyBKB" onclick="ShowAllyBKB()" value="Посмотреть" />
+        <td align="center">
+            <input type="image" class="button resultOne" name="AllyLS" onclick="ShowAllyLS()" value="Посмотреть" />
+        </td>
+    </tr>
 </table>
 
 <div>
@@ -201,28 +201,38 @@
 
     function ShowEnemyBKB() {
         var names = CollectEnemyNames();
-        $.ajax({
-            type: 'POST',
-            url: '/home/ShowEnemySkillsBKB',
-            contentType: 'application/json',
-            data: JSON.stringify(names),
-            success: function (data) {
-                $('#EnemyBKB').html(data);
-            }
-        });
+        if ($.inArray("Герой не выбран", names) + 1) {
+            alert("Пожалуйста, выберите 5 вражеских героев.");
+        }
+        else {
+            $.ajax({
+                type: 'POST',
+                url: '/home/ShowEnemySkillsBKB',
+                contentType: 'application/json',
+                data: JSON.stringify(names),
+                success: function (data) {
+                    $('#EnemyBKB').html(data);
+                }
+            });
+        }
     }
 
     function ShowEnemyLS() {
         var names = CollectEnemyNames();
-        $.ajax({
-            type: 'POST',
-            url: '/home/ShowEnemySkillsLS',
-            contentType: 'application/json',
-            data: JSON.stringify(names),
-            success: function(data) {
-                $('#EnemyLS').html(data);
-            }
-        });
+        if ($.inArray("Герой не выбран", names) + 1) {
+            alert("Пожалуйста, выберите 5 вражеских героев.");
+        }
+        else {
+            $.ajax({
+                type: 'POST',
+                url: '/home/ShowEnemySkillsLS',
+                contentType: 'application/json',
+                data: JSON.stringify(names),
+                success: function (data) {
+                    $('#EnemyLS').html(data);
+                }
+            });
+        }
     }
 
     function ShowAllEnemies() {
@@ -243,28 +253,38 @@
 
     function ShowAllyBKB() {
         var names = CollectEnemyNames();
-        $.ajax({
-            type: 'POST',
-            url: '/home/ShowEnemySkillsBKB',
-            contentType: 'application/json',
-            data: JSON.stringify(names),
-            success: function (data) {
-                $('#AllyBKB').html(data);
-            }
-        });
+        if ($.inArray("Герой не выбран", names) + 1) {
+            alert("Пожалуйста, выберите 5 союзных героев.");
+        }
+        else {
+            $.ajax({
+                type: 'POST',
+                url: '/home/ShowEnemySkillsBKB',
+                contentType: 'application/json',
+                data: JSON.stringify(names),
+                success: function (data) {
+                    $('#AllyBKB').html(data);
+                }
+            });
+        }
     }
 
     function ShowAllyLS() {
         var names = CollectEnemyNames();
-        $.ajax({
-            type: 'POST',
-            url: '/home/ShowEnemySkillsLS',
-            contentType: 'application/json',
-            data: JSON.stringify(names),
-            success: function (data) {
-                $('#AllyLS').html(data);
-            }
-        });
+        if ($.inArray("Герой не выбран", names) + 1) {
+            alert("Пожалуйста, выберите 5 союзных героев.");
+        }
+        else {
+            $.ajax({
+                type: 'POST',
+                url: '/home/ShowEnemySkillsLS',
+                contentType: 'application/json',
+                data: JSON.stringify(names),
+                success: function (data) {
+                    $('#AllyLS').html(data);
+                }
+            });
+        }
     }
 
     function ShowAllAllies() {
