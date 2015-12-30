@@ -133,7 +133,7 @@ td{
     position: absolute;
     width: 38px;
     height: 38px;
-    background-color: #403E3E;
+    background-color: #757373;
 }
 
 /*убирается подложка (для скилов, блокирующихся полностью)*/
@@ -144,11 +144,29 @@ td{
 /*класс .substrate имеют все div-подложки, 
 а тем div, которые не отображаются, дополнительно задаётся класс .no-substrate*/
 
+.icon-with-hint {
+    position: relative;
+}
+
 /*класс для комментария, всплывающего при наведении мышкой на картинку скила*/
 .pop-comment {
-    
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100px;
+    min-height: 38px;
+    color: white;
+    background-color: black;
+    padding: 8px 14px;
+    opacity:0;
+    border: 1px solid #f4cb0e;
+    border-radius: 5px;
+    cursor:default;
 }
 
 .pop-comment:hover {
-    
+    display: block;
+    top: 25px;
+    left: 25px;
+    opacity: 0.7;
 }
