@@ -87,19 +87,12 @@
     <input type="image" class="button resultAllEnemies" name="AllEnemies" onclick="ShowAllEnemies()" value="Посмотреть всех противников" />
 </div>
 
-@{
-    List<SelectListItem> allyResTypes = new List<SelectListItem>(){
-        new SelectListItem(){ Value="not_block", Text="Проходит", Selected=true},
-        new SelectListItem(){ Value="block", Text="Блокируется"},
-    };
-}
 <br />
 <br />
 <table>
     <thead>СОЮЗНИКИ</thead>
     <tr>
-        <td align="right" colspan="3">@Html.DropDownList("allyResTypes", allyResTypes)</td>
-        <td colspan="2" align="right">
+        <td colspan="5" align="right">
             <input type="checkbox" value="Показывать картинки" checked />Показывать картинки
         </td>
     </tr>
